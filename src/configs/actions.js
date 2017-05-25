@@ -1,3 +1,4 @@
-export const GET_CONTACT_LIST = 'GET_CONTACT_LIST';
-export const GET_CONTACT_DETAIL = 'GET_CONTACT_DETAIL';
-export const CLEAR_CONTACT_DETAIL = 'CLEAR_CONTACT_DETAIL';
+export const TOGGLE_TAB = 'TOGGLE_TAB';
+
+export const GET_TASK_LIST = 'GET_TASK_LIST';
+export const GET_TASK_DATA = 'GET_TASK_DATA';

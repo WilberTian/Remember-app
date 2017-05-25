@@ -61,7 +61,9 @@ module.exports = {
             },
             {
                 test: /\.js?$/,
-                exclude: /node_modules/,
+                exclude: [
+                    path.resolve(rootPath, 'node_modules')
+                ],
                 loader: ['babel-loader']
             },
             {
@@ -95,6 +97,11 @@ module.exports = {
                 test: /\.(svg)$/i,
                 loader: 'svg-sprite-loader',
                 include: svgDirs,  // 把 svgDirs 路径下的所有 svg 文件交给 svg-sprite-loader 插件处理
+            },
+            {
+                test: /react-icons\/(.)*(.js)$/,
+                loader: 'babel-loader',
+                include: path.resolve(rootPath, 'node_modules/react-icons')
             }
         ]
     },
@@ -130,7 +137,7 @@ module.exports = {
 
     resolve: {
         extensions: ['*', '.web.js', '.js', '.json', '.less', '.css', '.html'],
-        modules: ['src', 'node_modules', path.join(__dirname, './node_modules')],
+        modules: ['src', 'node_modules', path.resolve(rootPath, 'node_modules')],
         alias: { }
     }
 };

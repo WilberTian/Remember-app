@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-
-import contactReducer from './contactReducer';
+import tabReducer from './tabReducer';
 
 const rootReducer = combineReducers({
-    contactReducer,
+    tabReducer,
     routing: routerReducer
 });
 

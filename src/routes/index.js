@@ -1,22 +1,28 @@
-import App from '../containers/common/App';
-import ContactInfoContainer from '../containers/ContactInfoContainer';
-import ContactListContainer from '../containers/ContactListContainer';
-import ContactFormContainer from '../containers/ContactFormContainer';
+import RememberContainer from '../containers/remember/RememberContainer';
+import TaskContainer from '../containers/remember/task/TaskContainer';
+import NoteContainer from '../containers/remember/note/NoteContainer';
+import CategoryContainer from '../containers/remember/category/CategoryContainer';
+import TagContainer from '../containers/remember/tag/TagContainer';
 import NotFound from './NotFound';
 
-const ContactDetailRoute = {
-    path: 'contact-detail/:id',
-    component: ContactInfoContainer,
+const TaskRoute = {
+    path: 'task',
+    component: TaskContainer
 };
 
-const ContactAddRoute = {
-    path: 'contact-add',
-    component: ContactFormContainer,
+const NoteRoute = {
+    path: 'note',
+    component: NoteContainer
 };
 
-const ContactEditRoute = {
-    path: 'contact-edit/:id',
-    component: ContactFormContainer,
+const CategoryRoute = {
+    path: 'category',
+    component: CategoryContainer
+};
+
+const TagRoute = {
+    path: 'tag',
+    component: TagContainer,
 };
 
 const notFountRoute = {
@@ -26,14 +32,15 @@ const notFountRoute = {
 
 const route = {
     path: '/',
-    component: App,
+    component: RememberContainer,
     indexRoute: {
-        component: ContactListContainer,
+        component: TaskContainer,
     },
     childRoutes: [
-        ContactDetailRoute,
-        ContactAddRoute,
-        ContactEditRoute,
+        TaskRoute,
+        NoteRoute,
+        CategoryRoute,
+        TagRoute,
         notFountRoute
     ]
 };
