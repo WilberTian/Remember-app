@@ -1,10 +1,10 @@
 import { Modal } from 'antd-mobile';
 
-const CategoryModal = (value) => {
+const TagModal = (value) => {
     const prompt = Modal.prompt;
 
-    return prompt('Category',
-      'Input the category name',
+    return prompt('Tag',
+      'Input the tag name',
         [
             { text: 'Cancel' },
             {
@@ -19,4 +19,4 @@ const CategoryModal = (value) => {
     );
 };
 
-export default CategoryModal;
+export default TagModal;

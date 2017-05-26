@@ -7,12 +7,10 @@ import * as FaIcons from 'react-icons/fa';
 import * as styleConfig from '../../../configs/style';
 import * as routeActions from '../../../redux/actions/routeActions';
 
-import CategoryModal from './components/CategoryModal';
 import CategoryItem from './components/CategoryItem';
 
-class CategoryContainer extends PureComponent {
-    _showCategoryModal() {
-        CategoryModal('');
+class CategoryListContainer extends PureComponent {
+    _navToCategoryForm() {
     }
 
     render() {
@@ -26,7 +24,7 @@ class CategoryContainer extends PureComponent {
                   mode="light"
                   rightContent={<FaIcons.FaPlusCircle
                     style={selectedIconStyle}
-                    onClick={() => { this._showCategoryModal(); }}
+                    onClick={() => { this._navToCategoryForm(); }}
                   />}
                 >Categories</NavBar>
                 <List>
@@ -41,4 +39,4 @@ class CategoryContainer extends PureComponent {
 
 export default connect(null, {
     pushAction: routeActions.push
-})(CategoryContainer);
+})(CategoryListContainer);
