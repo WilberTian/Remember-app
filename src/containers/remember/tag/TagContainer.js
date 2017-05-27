@@ -34,7 +34,6 @@ class TagContainer extends PureComponent {
                     })}
                 </List>
             </div>
-
         );
     }
 }

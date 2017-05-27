@@ -1,0 +1,16 @@
+.strike {
+    position: relative;
+}
+
+.strike::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 40%;
+}
+
+.strike::before {
+    border: 2px solid #a94442;
+    transform: skewY(30deg);
+}

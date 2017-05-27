@@ -5,6 +5,7 @@ import { NavBar, List, InputItem, TextareaItem, Button } from 'antd-mobile';
 import { createForm } from 'rc-form';
 
 import * as routeActions from '../../../redux/actions/routeActions';
+import * as tabActions from '../../../redux/actions/tabActions';
 
 class CategoryFormContainer extends PureComponent {
     _onSubmit() {
@@ -25,13 +26,15 @@ class CategoryFormContainer extends PureComponent {
 
     render() {
         const { getFieldProps, getFieldError } = this.props.form;
+        const { goBackAction, toggleTabActions } = this.props;
 
         return (
             <div>
                 <NavBar leftContent="back"
                   mode="light"
                   onLeftClick={() => {
-                      console.log('onLeftClick');
+                      toggleTabActions();
+                      goBackAction();
                   }}
                 />
 
@@ -75,5 +78,6 @@ class CategoryFormContainer extends PureComponent {
 }
 
 export default connect(null, {
-    pushAction: routeActions.push
+    goBackAction: routeActions.goBack,
+    toggleTabActions: tabActions.toggleTab
 })(createForm()(CategoryFormContainer));

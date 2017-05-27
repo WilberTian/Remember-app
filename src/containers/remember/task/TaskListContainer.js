@@ -5,7 +5,12 @@ import { NavBar } from 'antd-mobile';
 
 import * as routeActions from '../../../redux/actions/routeActions';
 
-class TaskContainer extends PureComponent {
+import TaskListComponent from './components/TaskListComponent';
+
+import './task-list.less';
+import '../../../style/common.less';
+
+class TaskListContainer extends PureComponent {
 
     onOpenChange() {
 
@@ -13,14 +18,14 @@ class TaskContainer extends PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="task-list">
                 <NavBar mode="light" iconName="ellipsis" onLeftClick={this.onOpenChange}>Tasks</NavBar>
+                <TaskListComponent />
             </div>
-
         );
     }
 }
 
 export default connect(null, {
     pushAction: routeActions.push
-})(TaskContainer);
+})(TaskListContainer);

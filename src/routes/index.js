@@ -1,5 +1,5 @@
 import RememberContainer from '../containers/remember/RememberContainer';
-import TaskContainer from '../containers/remember/task/TaskContainer';
+import TaskListContainer from '../containers/remember/task/TaskListContainer';
 import NoteContainer from '../containers/remember/note/NoteContainer';
 import CategoryListContainer from '../containers/remember/category/CategoryListContainer';
 import CategoryFormContainer from '../containers/remember/category/CategoryFormContainer';
@@ -8,7 +8,7 @@ import NotFound from './NotFound';
 
 const TaskRoute = {
     path: 'task',
-    component: TaskContainer
+    component: TaskListContainer
 };
 
 const NoteRoute = {
@@ -40,7 +40,7 @@ const route = {
     path: '/',
     component: RememberContainer,
     indexRoute: {
-        component: TaskContainer,
+        component: TaskListContainer,
     },
     childRoutes: [
         TaskRoute,
