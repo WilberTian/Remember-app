@@ -67,8 +67,8 @@ class CategoryFormContainer extends PureComponent {
                           placeholder="description..."
                         />
                         <List.Item>
-                            <Button type="primary" onClick={this._onSubmit} inline>提交验证</Button>
-                            <Button onClick={this._onReset} inline style={{ marginLeft: 5 }}>重置</Button>
+                            <Button type="primary" size="small" onClick={this._onSubmit} inline>提交验证</Button>
+                            <Button size="small" onClick={this._onReset} inline style={{ marginLeft: 5 }}>重置</Button>
                         </List.Item>
                     </List>
                 </form>

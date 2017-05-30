@@ -8,7 +8,6 @@ import * as routeActions from '../../../redux/actions/routeActions';
 import TaskListComponent from './components/TaskListComponent';
 
 import './task-list.less';
-import '../../../style/common.less';
 
 class TaskListContainer extends PureComponent {
 

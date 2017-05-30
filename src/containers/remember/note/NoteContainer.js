@@ -12,17 +12,17 @@ import NoteListComponent from './components/NoteListComponent';
 class NoteContainer extends PureComponent {
 
     render() {
-        const { selectedIconStyle } = styleConfig;
+        const { whiteIconStyle } = styleConfig;
 
         return (
             <div>
                 <NavBar iconName="null"
                   mode="light"
                   rightContent={<FaIcons.FaPlusCircle
-                    style={selectedIconStyle}
+                    style={whiteIconStyle}
                     onClick={() => { this._showTagModal(); }}
                   />}
-                >Tags</NavBar>
+                >Notes</NavBar>
                 <NoteListComponent />
             </div>
         );

@@ -16,7 +16,7 @@ class TagContainer extends PureComponent {
     }
 
     render() {
-        const { selectedIconStyle } = styleConfig;
+        const { whiteIconStyle } = styleConfig;
         const tagList = ['Javascript', 'CSS'];
 
         return (
@@ -24,7 +24,7 @@ class TagContainer extends PureComponent {
                 <NavBar iconName="null"
                   mode="light"
                   rightContent={<FaIcons.FaPlusCircle
-                    style={selectedIconStyle}
+                    style={whiteIconStyle}
                     onClick={() => { this._showTagModal(); }}
                   />}
                 >Tags</NavBar>

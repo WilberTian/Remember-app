@@ -20,7 +20,7 @@ class CategoryListContainer extends PureComponent {
     }
 
     render() {
-        const { selectedIconStyle } = styleConfig;
+        const { whiteIconStyle } = styleConfig;
 
         const categoryList = ['Javascript', 'CSS'];
 
@@ -29,7 +29,7 @@ class CategoryListContainer extends PureComponent {
                 <NavBar iconName="null"
                   mode="light"
                   rightContent={<FaIcons.FaPlusCircle
-                    style={selectedIconStyle}
+                    style={whiteIconStyle}
                     onClick={() => { this._navToCategoryForm(); }}
                   />}
                 >Categories</NavBar>
