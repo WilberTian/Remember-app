@@ -22,9 +22,22 @@
         .am-navbar-left {
             color: #fff;
         }
-        
+
         .am-navbar-title {
             color: #fff;
         }
     }
+}
+
+.multiline-ellipsis {
+    position: relative;
+}
+.multiline-ellipsis::before {
+    content: '......';
+    position: absolute;
+    bottom: 0px;
+    left: 12px;
+    height: .6rem;
+    width: 100%;
+    background-color: #fff;
 }

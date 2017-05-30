@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
-import { List } from 'antd-mobile';
-
 import * as routeActions from '../../../../redux/actions/routeActions';
 
 import NoteItemComponent from './NoteItemComponent';
@@ -10,14 +8,17 @@ import NoteItemComponent from './NoteItemComponent';
 class NoteListComponent extends PureComponent {
 
     render() {
-        const noteList = ['Javascript', 'CSS'];
+        const noteList = [
+            'JavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascriptJavascript',
+            'CSS\nCSS\nCSS\nCSS\nCSS\nCSS\nCSS\nCSS\nCSS\nCSS\nCSS'
+        ];
 
         return (
-            <List>
+            <div className="note-list">
                 {noteList.map((note, index) => {
                     return <NoteItemComponent key={index} note={note} />;
                 })}
-            </List>
+            </div>
         );
     }
 }

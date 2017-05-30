@@ -1,6 +1,7 @@
 import RememberContainer from '../containers/remember/RememberContainer';
 import TaskListContainer from '../containers/remember/task/TaskListContainer';
-import NoteContainer from '../containers/remember/note/NoteContainer';
+import NoteListContainer from '../containers/remember/note/NoteListContainer';
+import NoteFormContainer from '../containers/remember/note/NoteFormContainer';
 import CategoryListContainer from '../containers/remember/category/CategoryListContainer';
 import CategoryFormContainer from '../containers/remember/category/CategoryFormContainer';
 import TagContainer from '../containers/remember/tag/TagContainer';
@@ -13,7 +14,12 @@ const TaskRoute = {
 
 const NoteRoute = {
     path: 'note',
-    component: NoteContainer
+    component: NoteListContainer
+};
+
+const NoteFormRoute = {
+    path: 'note-form',
+    component: NoteFormContainer
 };
 
 const CategoryListRoute = {
@@ -45,6 +51,7 @@ const route = {
     childRoutes: [
         TaskRoute,
         NoteRoute,
+        NoteFormRoute,
         CategoryListRoute,
         CategoryFormRoute,
         TagRoute,

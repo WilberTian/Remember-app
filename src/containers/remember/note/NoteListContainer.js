@@ -6,10 +6,18 @@ import * as FaIcons from 'react-icons/fa';
 
 import * as styleConfig from '../../../configs/style';
 import * as routeActions from '../../../redux/actions/routeActions';
+import * as tabActions from '../../../redux/actions/tabActions';
 
 import NoteListComponent from './components/NoteListComponent';
 
-class NoteContainer extends PureComponent {
+import './note-list.less';
+
+class NoteListContainer extends PureComponent {
+    _navToNoteForm() {
+        const { pushAction, toggleTabActions } = this.props;
+        toggleTabActions();
+        pushAction('note-form');
+    }
 
     render() {
         const { whiteIconStyle } = styleConfig;
@@ -20,7 +28,7 @@ class NoteContainer extends PureComponent {
                   mode="light"
                   rightContent={<FaIcons.FaPlusCircle
                     style={whiteIconStyle}
-                    onClick={() => { this._showTagModal(); }}
+                    onClick={() => { this._navToNoteForm(); }}
                   />}
                 >Notes</NavBar>
                 <NoteListComponent />
@@ -30,5 +38,6 @@ class NoteContainer extends PureComponent {
 }
 
 export default connect(null, {
-    pushAction: routeActions.push
-})(NoteContainer);
+    pushAction: routeActions.push,
+    toggleTabActions: tabActions.toggleTab
+})(NoteListContainer);
