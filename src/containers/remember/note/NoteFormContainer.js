@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import showdown from 'showdown';
 
 import { NavBar, TextareaItem } from 'antd-mobile';
 
@@ -16,14 +17,23 @@ class NoteFormContainer extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            isPreview: false
+            isPreview: false,
+            note: ''
         };
+
+        this.converter = new showdown.Converter();
     }
 
     _togglePreview() {
         console.log(this.state.isPreview);
         this.setState({
             isPreview: !this.state.isPreview
+        });
+    }
+
+    _noteChange(value) {
+        this.setState({
+            note: value
         });
     }
 
@@ -41,6 +51,9 @@ class NoteFormContainer extends PureComponent {
                 />
 
                 <div className="note-form-btns">
+                    <FaIcons.FaFloppyO
+                      style={{ color: '#009688' }}
+                    />
                     { !this.state.isPreview &&
                         <FaIcons.FaEye
                           style={{ color: '#009688' }}
@@ -66,13 +79,16 @@ class NoteFormContainer extends PureComponent {
                       autoHeight
                       rows="16"
                       placeholder="note..."
+                      value={this.state.note}
+                      onChange={::this._noteChange}
                     />
                 }
 
                 { this.state.isPreview &&
-                    <div className="note-preview">
-                        this is note preview
-                    </div>
+                    <div
+                      className="note-preview"
+                      dangerouslySetInnerHTML={{ __html: this.converter.makeHtml(this.state.note) }}
+                    />
                 }
             </div>
         );

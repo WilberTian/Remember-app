@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import showdown from 'showdown';
 
 import * as FaIcons from 'react-icons/fa';
 
@@ -16,6 +17,8 @@ class NoteItemComponent extends PureComponent {
             needExpand: false,
             expended: false
         };
+
+        this.converter = new showdown.Converter();
     }
 
     componentDidMount() {
@@ -90,12 +93,13 @@ class NoteItemComponent extends PureComponent {
                       }}
                     />
                 </div>
-                <div className={noteContentClass} ref={(ref) => {
-                    this.noteContent = ref;
-                }}
-                >
-                    {note}
-                </div>
+                <div
+                  className={noteContentClass}
+                  ref={(ref) => {
+                      this.noteContent = ref;
+                  }}
+                  dangerouslySetInnerHTML={{ __html: note }}
+                />
             </div>
         );
     }
