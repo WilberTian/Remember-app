@@ -7,6 +7,8 @@ import * as routeActions from '../../../../redux/actions/routeActions';
 
 import { dimensions } from '../../../../configs/constants';
 
+import './task-item.less';
+
 class TaskItemComponent extends PureComponent {
 
     render() {

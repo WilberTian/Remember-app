@@ -1,5 +1,6 @@
 import RememberContainer from '../containers/remember/RememberContainer';
 import TaskListContainer from '../containers/remember/task/TaskListContainer';
+import DimensionContainer from '../containers/remember/task/DimensionContainer';
 import NoteListContainer from '../containers/remember/note/NoteListContainer';
 import NoteFormContainer from '../containers/remember/note/NoteFormContainer';
 import CategoryListContainer from '../containers/remember/category/CategoryListContainer';
@@ -10,6 +11,11 @@ import NotFound from './NotFound';
 const TaskRoute = {
     path: 'task',
     component: TaskListContainer
+};
+
+const DimensonRoute = {
+    path: 'dimension',
+    component: DimensionContainer
 };
 
 const NoteRoute = {
@@ -50,6 +56,7 @@ const route = {
     },
     childRoutes: [
         TaskRoute,
+        DimensonRoute,
         NoteRoute,
         NoteFormRoute,
         CategoryListRoute,

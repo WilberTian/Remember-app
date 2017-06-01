@@ -1,0 +1,26 @@
+.task-list-item {
+	border-left: .1rem solid #45b745;
+	
+	.am-list-content {
+		display: flex;
+
+		.task-dimension {
+			width: 60px;
+
+			.important-dimension, .urgent-dimension {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				border: 1px solid #21b68a;
+				border-radius: 4px;
+				color: #21b68a;
+				margin-bottom: 4px;
+			}
+		}
+
+		.task-detail {
+			flex: 1;
+		}
+	}
+}
