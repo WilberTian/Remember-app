@@ -17,7 +17,16 @@ export const dimensions = [
     }
 ];
 
-export const taskStatusList = ['All', 'Complete', 'Incomplete'];
+export const taskStatusList = [{
+    label: 'all',
+    value: 0
+}, {
+    label: 'completed',
+    value: 1
+}, {
+    label: 'incomplete',
+    value: 2
+}];
 
 export const noteColors = [
     '#a4bdfc',
